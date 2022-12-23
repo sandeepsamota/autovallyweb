@@ -1,24 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Splash from "./components/Splash/Splash";
+import Splash1 from "./components/Splash/Splash1";
+import { Routes, Route } from "react-router-dom";
+import Home from "./components/Home/Home";
+import Login from "./components/Login/Login";
+import SignUp from "./components/SignUp/SignUp";
+import Otp from "./components/OTP/Otp";
+import Forgot from "./components/Forgot/Forgot";
+import Reset from "./components/Forgot/Reset";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Routes>
+        <Route path="/" element={<Splash />} />
+        <Route path="/select" element={<Splash1 />} />
+        <Route path="/home" element={<Home />} />
+        <Route path="/sign-in" element={<Login />} />
+        <Route path="/forgot-password" element={<Forgot />} />
+        <Route path="/reset-password" element={<Reset />} />
+        <Route path="/sign-up" element={<SignUp />} />
+        <Route path="/otp" element={<Otp />} />
+      </Routes>
+    </>
   );
 }
 
