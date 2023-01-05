@@ -8,6 +8,8 @@ import SignUp from "./components/SignUp/SignUp";
 import Otp from "./components/OTP/Otp";
 import Forgot from "./components/Forgot/Forgot";
 import Reset from "./components/Forgot/Reset";
+import Products from "./components/Products/Products";
+import ViewProducts from "./components/Products/ViewProducts";
 
 function App() {
   return (
@@ -16,6 +18,8 @@ function App() {
         <Route path="/" element={<Splash />} />
         <Route path="/select" element={<Splash1 />} />
         <Route path="/home" element={<Home />} />
+        <Route path="/products" element={<Products />} />
+        <Route path="/view-products" element={<ViewProducts />} />
         <Route path="/sign-in" element={<Login />} />
         <Route path="/forgot-password" element={<Forgot />} />
         <Route path="/reset-password" element={<Reset />} />

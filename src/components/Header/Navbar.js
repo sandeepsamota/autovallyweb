@@ -4,6 +4,7 @@ import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import Logo from "../../assets/logo.png";
 import Location from "./Location";
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const navigation = [
   { name: "Home", href: "#", current: true },
@@ -82,15 +83,17 @@ export default function Navbar() {
                 <Location />
               </div>
               {user === 0 && (
-                <div className="absolute inset-y-0 right-0 flex items-center sm:static sm:inset-auto ">
-                  <div className="absolute inset-y-0 right-0 flex items-center mx-2 sm:static sm:inset-auto ">
-                    <button
-                      type="button"
-                      onClick={goToLogin}
-                      className="bg-[#6E3CBC] px-3.5 py-2 rounded text-white hover:text-white hover:bg-[#5C329D] focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-[#6E3CBC]"
-                    >
-                      Login
-                    </button>
+                <div className="absolute hidden sm:block right-0 flex items-center sm:static sm:inset-auto ">
+                  <div className="absolute  right-0 flex items-center mx-2 sm:static sm:inset-auto ">
+                    <Link to="/products">
+                      <button
+                        type="button"
+                        onClick={goToLogin}
+                        className="bg-[#6E3CBC] px-3.5 py-2 rounded text-white hover:text-white hover:bg-[#5C329D] focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-[#6E3CBC]"
+                      >
+                        Book Now
+                      </button>
+                    </Link>
                   </div>
                   {/* <span className="mr-2 font-semibold">OR</span> */}
                   {/* <div className="absolute hidden md:block inset-y-0 right-0 flex items-center sm:static sm:inset-auto">

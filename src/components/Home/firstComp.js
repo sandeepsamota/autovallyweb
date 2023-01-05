@@ -11,6 +11,7 @@ import Inst5 from "../../assets/inst3.jpg";
 
 import { BsChevronCompactLeft, BsChevronCompactRight } from "react-icons/bs";
 import { RxDotFilled } from "react-icons/rx";
+import { Link } from "react-router-dom";
 
 function FirstComp() {
   const slides = [
@@ -64,10 +65,11 @@ function FirstComp() {
               of this application is providing the easy and continence ride to
               the customer.
             </p>
-
-            <button className="transition mt-6 ease-in duration-700 text-white bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-purple-300 dark:focus:ring-purple-800 font-medium rounded-lg text-sm px-6 py-3 h-max w-48 md:w-64 text-center">
-              Book Now
-            </button>
+            <Link to="/products">
+              <button className="transition mt-6 ease-in duration-700 text-white bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-purple-300 dark:focus:ring-purple-800 font-medium rounded-lg text-sm px-6 py-3 h-max w-48 md:w-64 text-center">
+                Book Now
+              </button>
+            </Link>
             <button className="transition my-6 ease-in duration-700 text-white bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-purple-300 dark:focus:ring-purple-800 font-medium rounded-lg text-sm px-6 py-3 h-max w-48 md:w-64 text-center">
               Contact Us
             </button>

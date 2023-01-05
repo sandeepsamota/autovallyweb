@@ -69,7 +69,7 @@ function Splash1() {
                     </Listbox.Label>
                     <div className="relative mt-1">
                       <Listbox.Button
-                        Label="select country"
+                        lable="select country"
                         className="relative w-full cursor-default rounded-md border border-gray-300 bg-white py-3 px-5 text-left shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-[#6E3CBC] sm:text-sm"
                       >
                         <span className="flex items-center">
