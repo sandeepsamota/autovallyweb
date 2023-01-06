@@ -1,13 +1,16 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Logo from "../../assets/logo.png";
 import Animation from "../../assets/animation.gif";
 
 function Spalsh() {
   let navigate = useNavigate();
-  setTimeout(() => {
-    navigate("/select");
-  }, 4000);
+
+  useEffect(() => {
+    setTimeout(() => {
+      navigate("/select");
+    }, 4000);
+  });
   return (
     <>
       <div className="bg-white relative h-[100vh] w-[100vw] flex flex-col justify-center items-center	">

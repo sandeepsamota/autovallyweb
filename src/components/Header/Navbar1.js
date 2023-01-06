@@ -91,7 +91,17 @@ function Navbar1() {
                         onClick={goToProducts}
                         className="bg-[#6E3CBC] px-3.5 py-2 rounded text-white hover:text-white hover:bg-[#5C329D] focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-[#6E3CBC]"
                       >
-                        Book Now
+                        Login
+                      </button>
+
+                      <span className="mx-1">OR</span>
+
+                      <button
+                        type="button"
+                        onClick={goToProducts}
+                        className="bg-[#6E3CBC] px-3.5 py-2 rounded text-white hover:text-white hover:bg-[#5C329D] focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-[#6E3CBC]"
+                      >
+                        Sign up
                       </button>
                     </div>
                   </div>

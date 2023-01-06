@@ -10,6 +10,7 @@ import Forgot from "./components/Forgot/Forgot";
 import Reset from "./components/Forgot/Reset";
 import Products from "./components/Products/Products";
 import ViewProducts from "./components/Products/ViewProducts";
+import ConfirmOrder from "./components/Orders/ConfirmOrder";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route path="/home" element={<Home />} />
         <Route path="/products" element={<Products />} />
         <Route path="/view-products" element={<ViewProducts />} />
+        <Route path="/confirm-order" element={<ConfirmOrder />} />
         <Route path="/sign-in" element={<Login />} />
         <Route path="/forgot-password" element={<Forgot />} />
         <Route path="/reset-password" element={<Reset />} />

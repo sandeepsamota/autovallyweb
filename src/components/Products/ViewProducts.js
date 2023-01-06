@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import Navbar1 from "../Header/Navbar1";
-import Preference from "../Preference/Preference";
 import Location from "../Header/Location";
 import CarSpeed from "../../assets/hundred.png";
 import Image1 from "../../assets/i20.jpg";
@@ -11,7 +10,7 @@ import Km from "../../assets/kilometer.png";
 import Fuel from "../../assets/fuel.png";
 import Manual from "../../assets/manual.png";
 import Seating from "../../assets/seating.png";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import styled from "styled-components";
 const Button = styled.button``;
 const ButtonToggle = styled(Button)`
@@ -39,6 +38,7 @@ const types1 = [
 const types = [{ plan: 180 }, { plan: 348 }, { plan: "unlimited" }];
 
 function ViewProducts() {
+  const navigate = useNavigate();
   const [activecar, setActiveCar] = useState(types[0]);
 
   const car = [
@@ -79,6 +79,7 @@ function ViewProducts() {
   const [activeBtn, setActiveBtn] = useState(true);
   function btnHandler() {
     console.log("clicked");
+    navigate("/confirm-order");
   }
   return (
     <>
@@ -170,7 +171,7 @@ function ViewProducts() {
                     <div className="flex justify-start my-4 space-x-3 md:space-x-3">
                       {types1.map((type1) => (
                         <div
-                          key={type1}
+                          key={type1.title}
                           style={{ fontSize: "13px" }}
                           className="w-32 opacity-100 border-2 rounded-lg border-[#cfbee9]"
                         >
@@ -191,7 +192,7 @@ function ViewProducts() {
                     <ButtonGroup className="flex justify-start my-4 space-x-3 md:space-x-3">
                       {types.map((type1) => (
                         <ButtonToggle
-                          key={type1}
+                          // key={type1.plan}
                           active={activecar === type1}
                           onClick={() => setActiveCar(type1)}
                           className="w-32"
@@ -235,7 +236,7 @@ function ViewProducts() {
             <ButtonGroup className="flex lg:hidden justify-center mt-4 space-x-1 md:space-x-3">
               {types.map((type1) => (
                 <ButtonToggle
-                  key={type1}
+                  // key={type1.plan}
                   active={activecar === type1}
                   onClick={() => setActiveCar(type1)}
                   className="w-28 py-0.5"
@@ -251,10 +252,8 @@ function ViewProducts() {
                 </ButtonToggle>
               ))}
             </ButtonGroup>
-            <div className="relative mt-3 top-0">
-              <Preference />
-            </div>
-            <div className="rounded-md shadow-sm mt-10 flex flex-col">
+
+            <div className="rounded-md shadow-sm mt-[-15px] flex flex-col">
               <div className="w-full px-1 pt-12 lg:mx-6 flex items-center">
                 <hr className="md:block w-full border-2 border-[#e3d9f3]" />
                 <p className="mx-4 text-base text-[#6E3CBC] oneappheading">
@@ -291,25 +290,27 @@ function ViewProducts() {
                 </p>
                 <p className="basis-1/3 oneappheading">₹ 24237</p>
               </div>
-              <div className="mx-3.5 mt-3 md:mx-10 flex flex-row space-x-2 items-center">
-                <input
-                  type="checkbox"
-                  onChange={() => setActiveBtn(!activeBtn)}
-                  className="rounded relative top-[-10px]"
-                />
-                <p className="text-base">
-                  By submitting this form you agree to our
-                  <Link to="/home">terms & conditions</Link>.
-                </p>
-              </div>
-              <div className="my-3 flex items-center justify-center">
-                <button
-                  disabled={activeBtn}
-                  onClick={btnHandler}
-                  className="bg-[#6E3CBC] hover:bg-[#696969] rounded-full w-full mx-12 md:px-14 lg:px-15 py-3.5 text-white font-semibold"
-                >
-                  Proceed
-                </button>
+              <div className="flex flex-col md:flex-row md:my-3 items-center">
+                <div className="md:basis-1/2 mx-3.5 mt-3 md:mt-0 md:mx-10 flex flex-row space-x-2 items-center ">
+                  <input
+                    type="checkbox"
+                    onChange={() => setActiveBtn(!activeBtn)}
+                    className="rounded relative top-[-10px] md:top-[-10px] lg:top-0"
+                  />
+                  <p className="text-sm">
+                    By submitting this form you agree to our
+                    <Link to="/home">terms & conditions</Link>.
+                  </p>
+                </div>
+                <div className="md:basis-1/3 my-3 md:my-0 flex ">
+                  <button
+                    disabled={activeBtn}
+                    onClick={btnHandler}
+                    className="bg-[#6E3CBC] hover:bg-[#696969] rounded-full w-64 md:w-44 lg:w-52 lg:w-60 md:px-10 lg:px-15 py-3.5 text-white font-semibold"
+                  >
+                    Proceed
+                  </button>
+                </div>
               </div>
             </div>
             <div className="rounded-md shadow-sm bg-gray-100 mt-10 flex flex-col">

@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import "../Home/SecondComp.css";
+import Preference from "../Preference/Preference";
 import Km from "../../assets/kilometer.png";
 import Fuel from "../../assets/fuel.png";
 import Manual from "../../assets/manual.png";
@@ -252,7 +253,9 @@ function Products() {
   return (
     <>
       <Navbar1 />
-
+      <div className="relative mt-3 top-0">
+        <Preference />
+      </div>
       <div className="container flex flex-col space-y-0 md:space-y-5  mx-auto">
         <div className="text-center text-[#6E3CBC] text-xl md:mt-6 oneappheading">
           Cars

@@ -45,6 +45,8 @@ function Preference() {
     let endDateTime = moment(endDate);
     const diff = endDateTime - startDateTime;
     const diffDuration = moment.duration(diff);
+    const city = [selectCity.name];
+    localStorage.setItem("City", city);
     console.log(diff);
     if (diff >= 21600836) {
       setTotalDays(diffDuration.days());
@@ -65,7 +67,6 @@ function Preference() {
   function setEnddate(date) {
     setEndDate(date);
   }
-
   return (
     <>
       <div className="w-full justify-center item-center flex">
@@ -199,10 +200,10 @@ function Preference() {
           </div>
           <div className="footer">
             <button
-              className="bg-[#6E3CBC] hover:bg-[#696969] rounded-full px-20 md:px-14 lg:px-15 py-3.5 relative top-2.5 text-white font-semibold"
+              className="bg-[#6E3CBC] hover:bg-[#696969] rounded-full px-16 md:px-14 lg:px-15 py-3.5 relative top-2.5 text-white font-semibold"
               onClick={onFormSubmit}
             >
-              Submit
+              Search
             </button>
           </div>
         </div>
