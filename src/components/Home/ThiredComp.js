@@ -74,7 +74,7 @@ function ThiredComp() {
             </p>
           </div>
         </div>
-        <div className="features2 flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4 2xl:space-x-6 mb-4 2xl:mb-6">
+        <div className="features2 flex flex-col md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-4 2xl:space-x-6 mb-4 2xl:mb-6">
           <div className=" bg-[#e3d9f3] p-5 rounded-lg">
             <div className="flex items-center">
               <img

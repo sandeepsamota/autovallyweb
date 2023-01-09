@@ -256,6 +256,28 @@ function Products() {
       <div className="relative mt-3 top-0">
         <Preference />
       </div>
+      {/* Loading Animation */}
+      <div class="border-none p-8 mx-auto rounded-md p-4 max-w-3xl w-full">
+        <div class="animate-pulse flex space-x-4">
+          <div class="rounded-sm bg-slate-300 h-28 w-28"></div>
+          <div class="flex-1 space-y-6 py-1">
+            <div class="h-2 bg-slate-300 rounded"></div>
+            <div class="space-y-3">
+              <div class="grid grid-cols-3 gap-4">
+                <div class="h-2 bg-slate-300 rounded col-span-1"></div>
+                <div class="h-2 bg-slate-300 rounded col-span-1"></div>
+                <div class="h-2 bg-slate-300 rounded col-span-1"></div>
+              </div>
+              <div class="grid grid-cols-3 gap-4">
+                <div class="h-2 mt-1 bg-slate-300 rounded col-span-1"></div>
+                <div class="h-2 mt-1 bg-slate-300 rounded col-span-1"></div>
+                <div class="h-2 mt-1 bg-slate-300 rounded col-span-1"></div>
+              </div>
+            </div>
+            <div class="h-2 bg-slate-300 rounded"></div>
+          </div>
+        </div>
+      </div>
       <div className="container flex flex-col space-y-0 md:space-y-5  mx-auto">
         <div className="text-center text-[#6E3CBC] text-xl md:mt-6 oneappheading">
           Cars

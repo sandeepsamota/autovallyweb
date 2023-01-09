@@ -105,7 +105,7 @@ function Preference() {
                       leaveFrom="opacity-100"
                       leaveTo="opacity-0"
                     >
-                      <Listbox.Options className="absolute z-10 mt-1 max-h-56 w-max overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
+                      <Listbox.Options className="absolute z-10 mt-1 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
                         {city.map((city) => (
                           <Listbox.Option
                             key={city.id}
@@ -164,39 +164,52 @@ function Preference() {
             </Listbox>
           </div>
           <div className="flex items-center space-x-1 md:space-x-3">
-            <DatePicker
-              selected={startDate}
-              showTimeSelect
-              onChange={setStartdate}
-              timeFormat="HH:mm"
-              viewMode="start time"
-              timeIntervals={30}
-              timeCaption="time"
-              dateFormat="d MMM yyyy"
-              placeHolder="start time"
-              placeholderText="Start Time"
-              name="start time"
-              minDate={new Date()}
-              maxDate={addDays(new Date(), 365)}
-              className="rounded-md relative text-center top-3 w-36 md:w-36 lg:w-52 xl:w-64 2xl:w-72 py-3"
-            />
-
-            <DatePicker
-              selected={endDate}
-              showTimeSelect
-              onChange={setEnddate}
-              timeFormat="HH:mm"
-              viewMode="start time"
-              timeIntervals={30}
-              timeCaption="time"
-              dateFormat="d MMM yyyy"
-              placeHolder="start time"
-              placeholderText="End Time"
-              name="start time"
-              minDate={startDate}
-              maxDate={addDays(new Date(), 365)}
-              className="rounded-md relative text-center top-3 w-36 md:w-36 lg:w-52 xl:w-64 2xl:w-72 py-3"
-            />
+            <div>
+              <Listbox>
+                <Listbox.Label className="text-center block text-sm font-medium text-gray-700">
+                  Start Time
+                </Listbox.Label>
+              </Listbox>
+              <DatePicker
+                selected={startDate}
+                showTimeSelect
+                onChange={setStartdate}
+                timeFormat="HH:mm"
+                viewMode="start time"
+                timeIntervals={30}
+                timeCaption="time"
+                dateFormat="d MMM yyyy"
+                placeHolder="start time"
+                placeholderText="Start Time"
+                name="start time"
+                minDate={new Date()}
+                maxDate={addDays(new Date(), 365)}
+                className="rounded-md relative text-center top-3 w-36 md:w-36 lg:w-52 xl:w-64 2xl:w-72 py-3"
+              />
+            </div>
+            <div>
+              <Listbox>
+                <Listbox.Label className="text-center block text-sm font-medium text-gray-700">
+                  End Time
+                </Listbox.Label>
+              </Listbox>
+              <DatePicker
+                selected={endDate}
+                showTimeSelect
+                onChange={setEnddate}
+                timeFormat="HH:mm"
+                viewMode="start time"
+                timeIntervals={30}
+                timeCaption="time"
+                dateFormat="d MMM yyyy"
+                placeHolder="start time"
+                placeholderText="End Time"
+                name="start time"
+                minDate={startDate}
+                maxDate={addDays(new Date(), 365)}
+                className="rounded-md relative text-center top-3 w-36 md:w-36 lg:w-52 xl:w-64 2xl:w-72 py-3"
+              />
+            </div>
           </div>
           <div className="footer">
             <button
