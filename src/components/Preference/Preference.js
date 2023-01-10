@@ -38,8 +38,8 @@ function Preference() {
   const [endDate, setEndDate] = useState(new Date());
   const selectedstarttime = localStorage.setItem("selectedstart", startDate);
   const selectedendtime = localStorage.setItem("selectedend", endDate);
-  // console.log(selectedstarttime);
-  // console.log(selectedendtime);
+  console.log(selectedstarttime);
+  console.log(selectedendtime);
   function onFormSubmit() {
     let startDateTime = moment(startDate);
     let endDateTime = moment(endDate);

@@ -120,7 +120,7 @@ function ViewProducts() {
                 </div>
                 <div className="flex-1 my-0 md:mt-6 lg:mt-[-55px]">
                   <p className="oneappheading rounded">{car.name}</p>
-                  <div className="space-y-4">
+                  <div className="relative top-[-10px] xl:top-0 space-y-4">
                     <div className="grid grid-cols-2 grid-rows-2 mt-4 gap-4">
                       <p className="flex align-center space-x-1">
                         <img
@@ -167,7 +167,13 @@ function ViewProducts() {
                       </p>
                     </div>
                   </div>
-                  <div className="hidden md:block">
+                  <div className="hidden relative top-[-19px] xl:top-0 md:block">
+                    <div className="flex px-1.5 relative top-3 xl:space-x-72">
+                      <div className="text-sm font-semibold">car spec</div>
+                      <div className="text-sm text-[#6E3CBC] cursor-pointer">
+                        see more
+                      </div>
+                    </div>
                     <div className="flex justify-start my-4 space-x-3 md:space-x-3">
                       {types1.map((type1) => (
                         <div
@@ -212,7 +218,14 @@ function ViewProducts() {
                 </div>
               </div>
             ))}
-            <div className="block md:hidden">
+            <div className="block px-3 md:hidden">
+              <div className="flex px-1.5 relative top-3 justify-between">
+                <div className="text-sm font-semibold">car spec</div>
+                <div className="text-sm text-[#6E3CBC] cursor-pointer">
+                  see more
+                </div>
+              </div>
+
               <div className="flex justify-center my-4 space-x-1 md:space-x-3">
                 {types1.map((type1) => (
                   <div
@@ -233,7 +246,7 @@ function ViewProducts() {
                 ))}
               </div>
             </div>
-            <ButtonGroup className="flex lg:hidden justify-center mt-4 space-x-1 md:space-x-3">
+            <ButtonGroup className="flex lg:hidden justify-center px-3 space-x-1 md:space-x-3">
               {types.map((type1) => (
                 <ButtonToggle
                   // key={type1.plan}

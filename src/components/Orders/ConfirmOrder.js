@@ -5,12 +5,13 @@ import Image1 from "../../assets/i20.jpg";
 import "../Products/ViewProduct.css";
 
 function ConfirmOrder() {
+  const coast = 3550;
   return (
     <>
       <Navbar1 />
-      <div className="container mx-auto md:w-[450px] lg:mx-10">
-        <div>
-          <div className="bg-gray-100 lg:hidden rounded-sm p-1.5 m-2 shadow-sm">
+      <div className="container mx-auto md:w-[450px] lg:w-full flex flex-col lg:flex-row justify-center">
+        <div className="lg:w-3/5 xl:w-1/2">
+          <div className="bg-gray-100 rounded-sm p-1.5 m-2 shadow-sm">
             <p className="text-sm font-semibold my-1.5">
               Your Vehicle has been reserved for 15 minute.
             </p>
@@ -22,7 +23,7 @@ function ConfirmOrder() {
           <p className="bg-gray-100 font-semibold text-sm lg:hidden rounded-sm p-1.5 m-2 shadow-sm">
             Your Items:
           </p>
-          <div className="bg-gray-100 w-fit flex lg:hidden rounded-sm p-1.5 m-2 shadow-sm">
+          <div className="bg-gray-100 w-fit flex rounded-sm p-1.5 m-2 shadow-sm">
             <div>
               <img
                 className="w-[500px] rounded-md"
@@ -34,7 +35,7 @@ function ConfirmOrder() {
               </p>
             </div>
             <div>
-              <div className="flex items-center mx-1 md:mx-10 md:my-1 space-x-1.5">
+              <div className="flex items-center mx-1 md:mx-10 lg:mx-24 md:my-1 space-x-1.5">
                 <button
                   className="inline-flex items-center p-1 text-sm font-medium text-gray-500 bg-white border border-gray-300 rounded-full focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700"
                   type="button"
@@ -83,12 +84,10 @@ function ConfirmOrder() {
                   </svg>
                 </button>
               </div>
-              <div className="rounded-md md:px-3 shadow-sm flex flex-col space-y-0.5">
+              <div className="rounded-md md:px-3 shadow-sm flex flex-col space-y-0.5 md:space-y-1 lg:space-y-2">
                 <div className="px-1 flex flex-row justify-between items-baseline">
                   <p className="text-sm text-[#808080] font-semibold">Fare:</p>
-                  <p className="text-sm text-[#808080] font-semibold">
-                    ₹ 24237
-                  </p>
+                  <p className="text-sm text-[#808080] font-semibold">₹ 2423</p>
                 </div>
                 <div className="px-1 flex flex-row justify-between items-baseline">
                   <p className="text-sm text-[#808080] font-semibold">Tax:</p>
@@ -98,50 +97,56 @@ function ConfirmOrder() {
                   <p className="text-sm text-[#808080] font-semibold">
                     Security:
                   </p>
-                  <p className="text-sm text-[#808080] font-semibold">₹ 2000</p>
+                  <p className="text-sm text-[#808080] font-semibold">₹ 200</p>
                 </div>
                 <hr className="md:block w-full border-1.5 border-[#e3d9f3]" />
 
                 <div className="px-1 flex flex-row justify-between items-baseline">
                   <p className="text-sm text-[#6E3CBC] oneappheading">Total:</p>
                   <p className="text-[#6E3CBC] oneappheading text-sm">
-                    ₹ 24237
+                    {coast}
                   </p>
                 </div>
               </div>
             </div>
           </div>
-          <div className="lg:flex m-2">
-            <div className="rounded-md md:order-last md:m-0 shadow-sm">
+          <div className="bg-gray-100 rounded-sm p-5 m-2 shadow-sm space-y-6">
+            <p className="text-sm font-semibold">Pick on:</p>
+            <p className="text-sm font-semibold">Drop on:</p>
+          </div>
+        </div>
+        <div>
+          <div className="conatiner m-2 md:m-0 md:mx-auto">
+            <div className="rounded-md md:m-0 shadow-sm">
               <p className="text-sm bg-gray-100 p-1 rounded-sm font-semibold">
                 Preferred Payment Options
               </p>
-              <div className="m-3 flex items-center justiyfy-center space-x-2 text-sm">
+              <button className="p-3 w-full flex items-center justiyfy-center space-x-2 text-sm">
                 <img
                   className="h-10 rounded-full"
                   src="https://play-lh.googleusercontent.com/HArtbyi53u0jnqhnnxkQnMx9dHOERNcprZyKnInd2nrfM7Wd9ivMNTiz7IJP6-mSpwk=s96-rw"
                   alt="..."
                 ></img>
                 <p>Google Pay</p>
-              </div>
+              </button>
               <hr />
-              <div className="m-3 flex items-center space-x-2 text-sm">
+              <button className="p-3 w-full flex items-center justiyfy-center space-x-2 text-sm">
                 <img
                   className="h-10 rounded-full"
                   src="https://play-lh.googleusercontent.com/6iyA2zVz5PyyMjK5SIxdUhrb7oh9cYVXJ93q6DZkmx07Er1o90PXYeo6mzL4VC2Gj9s=w480-h960-rw"
                   alt="..."
                 ></img>
                 <p>PhonePe</p>
-              </div>
+              </button>
               <hr />
-              <div className="m-3 flex items-center space-x-2 text-sm">
+              <button className="p-3 w-full flex items-center justiyfy-center space-x-2 text-sm">
                 <img
                   className="h-10 w-10 p-1 rounded-full"
                   src={Paytm}
                   alt="..."
                 ></img>
                 <p>Paytm UPI</p>
-              </div>
+              </button>
               <hr />
             </div>
             <div className="rounded-md md:m-0 shadow-sm">
@@ -149,58 +154,66 @@ function ConfirmOrder() {
                 Other Payment Options
               </p>
               <hr />
-              <div className="m-3 flex items-center space-x-2">
+              <button className="p-3 w-full flex items-center space-x-2 text-sm">
                 <img
                   className="h-10 w-10 p-1 rounded-lg"
                   src="https://zoomcar-assets.zoomcar.com/images/original/9fcb8335a89265849f23225858489f2a9ce8e121.png?1584453574"
                   alt="..."
                 ></img>
                 <div className="flex flex-col">
-                  <p className="text-base">UPI</p>
-                  <p className="text-[12px]">Google Pay, PhonePe, BHIM UPI</p>
+                  <p className="text-left text-base">UPI</p>
+                  <p className="text-left text-[12px]">
+                    Google Pay, PhonePe, BHIM UPI
+                  </p>
                 </div>
-              </div>
+              </button>
               <hr />
-              <div className="m-3 flex items-center space-x-2">
+              <button className="p-3 w-full flex items-center space-x-2 text-sm">
                 <img
                   className="h-10 w-10 p-1 rounded-lg"
                   src="https://zoomcar-assets.zoomcar.com/images/original/97f051d76793fffe5ab182ffa58b8eb47c5ba0cf.png?1584453494"
                   alt="..."
                 ></img>
                 <div className="flex flex-col">
-                  <p className="text-base">Credit / Debit / ATM Card</p>
-                  <p className="text-[12px]">
+                  <p className="text-left text-base">
+                    Credit / Debit / ATM Card
+                  </p>
+                  <p className="text-left text-[12px]">
                     All major card providers are supported
                   </p>
                 </div>
-              </div>
+              </button>
               <hr />
-              <div className="m-3 flex items-center space-x-2">
+              <button className="p-3 w-full flex items-center space-x-2 text-sm">
                 <img
                   className="h-10 w-10 p-1 rounded-lg"
                   src="https://zoomcar-assets.zoomcar.com/images/original/1317404625e385185d23ea43a0c34569d6432d09.png?1632130014"
                   alt="..."
                 ></img>
                 <div className="flex flex-col">
-                  <p className="text-base">Mobile Wallet</p>
-                  <p className="text-[12px]">All major wallets are supported</p>
+                  <p className="text-left text-base">Mobile Wallet</p>
+                  <p className="text-left text-[12px]">
+                    All major wallets are supported
+                  </p>
                 </div>
-              </div>
+              </button>
               <hr />
-              <div className="m-3 flex items-center space-x-2">
+              <button className="p-3 w-full flex items-center space-x-2 text-sm">
                 <img
                   className="h-10 w-10 p-1 rounded-lg"
                   src="https://zoomcar-assets.zoomcar.com/images/original/4dd051886e5403aafb9725b7d2ab42c80f9b1df6.png?1584453529"
                   alt="..."
                 ></img>
                 <div className="flex flex-col">
-                  <p className="text-base">Net Banking</p>
-                  <p className="text-[12px]">All major banks are supported</p>
+                  <p className="text-left text-base">Net Banking</p>
+                  <p className="text-left text-[12px]">
+                    All major banks are supported
+                  </p>
                 </div>
-              </div>
+              </button>
             </div>
           </div>
-          <div className="rounded-md lg:absolute bottom-0 m-2 md:m-0 shadow-sm">
+          <div className="rounded-md shadow-sm">
             <div className="m-3 flex items-center space-x-2">
               <img
                 className="h-10 rounded-lg"
