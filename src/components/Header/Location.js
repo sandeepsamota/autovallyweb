@@ -8,8 +8,6 @@ function Location() {
   const Country = localStorage.getItem("Country");
   const CountImg = localStorage.getItem("CountImg");
   const City = localStorage.getItem("City");
-  console.log(Country);
-  console.log(City);
 
   return (
     <>
@@ -29,7 +27,7 @@ function Location() {
       </div>{" "}
       <Menu as="div" className="relative inline-block w-24 text-left">
         <div>
-          <Menu.Button className="inline-flex w-full justify-center rounded-md border border-gray-300 bg-white px-2 py-2 text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:border-2 focus:border-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-100">
+          <Menu.Button className="inline-flex w-full justify-center rounded-md border border-gray-300 bg-white px-2 py-2 text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:border-2 focus:border-[#6E3CBC] focus:ring-offset-2 focus:ring-offset-gray-100">
             <span>
               <img
                 src={LocationIcon}

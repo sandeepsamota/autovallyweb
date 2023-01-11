@@ -35,7 +35,7 @@ function Preference() {
   const [totalMinuates, setTotalMinuates] = useState("");
   console.log(totalMinuates);
   const [startDate, setStartDate] = useState(new Date());
-  const [endDate, setEndDate] = useState(new Date());
+  const [endDate, setEndDate] = useState(startDate);
   const selectedstarttime = localStorage.setItem("selectedstart", startDate);
   const selectedendtime = localStorage.setItem("selectedend", endDate);
   console.log(selectedstarttime);
@@ -97,7 +97,6 @@ function Preference() {
                         />
                       </span>
                     </Listbox.Button>
-
                     <Transition
                       show={open}
                       as={Fragment}
@@ -176,13 +175,13 @@ function Preference() {
                 onChange={setStartdate}
                 timeFormat="HH:mm"
                 viewMode="start time"
-                timeIntervals={30}
+                timeIntervals={60}
                 timeCaption="time"
                 dateFormat="d MMM yyyy"
                 placeHolder="start time"
                 placeholderText="Start Time"
                 name="start time"
-                minDate={new Date()}
+                minDate={new Date().getTime()}
                 maxDate={addDays(new Date(), 365)}
                 className="rounded-md relative text-center top-3 w-36 md:w-36 lg:w-52 xl:w-64 2xl:w-72 py-3"
               />
@@ -199,7 +198,7 @@ function Preference() {
                 onChange={setEnddate}
                 timeFormat="HH:mm"
                 viewMode="start time"
-                timeIntervals={30}
+                timeIntervals={60}
                 timeCaption="time"
                 dateFormat="d MMM yyyy"
                 placeHolder="start time"
@@ -223,7 +222,7 @@ function Preference() {
       </div>
       <ToastContainer />
       {totalDays !== "" && (
-        <p className="text-center ">
+        <p className="text-center mt-3">
           <span>Duration is :</span>
           <span
             style={{

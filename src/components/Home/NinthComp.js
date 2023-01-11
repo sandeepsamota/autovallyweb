@@ -21,7 +21,10 @@ function NinthComp() {
         call or send us mail which is provided below.
       </p>
       <div className="features1 mt-10 xl:px-16 flex flex-col md:flex-row justify-between space-y-10 md:space-y-0 md:space-x-6 2xl:space-x-6 mb-4 2xl:mb-6">
-        <div className="flex flex-col w-full items-left bg-white p-5 border-2 border-dotted border-[#CFBEE9] rounded-lg">
+        <a
+          href="mailto:autovallyrentals@gmail.com"
+          className="flex flex-col w-full items-left bg-white p-5 border-2 border-dotted border-[#CFBEE9] rounded-lg"
+        >
           <div className="flex items-center text-center space-x-4 mb-1">
             <div className=" bg-[#6E3CBC] h-14 w-14 rounded-full">
               <img className="p-3.5" src={Email} alt="..." />
@@ -34,7 +37,7 @@ function NinthComp() {
           <p className="w-[100%] md:w-[80%] lg:w-[100%] font-none mt-2 text-lg text-left">
             autovallyrentals@gmail.com
           </p>
-        </div>
+        </a>
         <div className="flex flex-col w-full items-left bg-white p-5 border-2 border-dotted border-[#CFBEE9] rounded-lg">
           <div className="flex items-center text-center space-x-4 mb-1">
             <div className=" bg-[#6E3CBC] h-14 w-14 rounded-full">
@@ -51,7 +54,10 @@ function NinthComp() {
             Whitefield,Bengaluru, Karnataka(560066)
           </p>
         </div>
-        <div className="flex flex-col w-full items-left bg-white p-5 border-2 border-dotted border-[#CFBEE9] rounded-lg">
+        <a
+          href="tel:+919460451905"
+          className="flex flex-col w-full items-left bg-white p-5 border-2 border-dotted border-[#CFBEE9] rounded-lg"
+        >
           <div className="flex items-center text-left space-x-4 mb-1">
             <div className="bg-[#6E3CBC] h-14 w-14 rounded-full">
               <img className="p-3.5 " src={Call} alt="..." />
@@ -64,7 +70,7 @@ function NinthComp() {
           <p className="w-[100%] md:w-[80%] lg:w-[100%] font-none mt-2 text-lg text-left">
             +91-9460451905
           </p>
-        </div>
+        </a>
       </div>
     </>
   );
