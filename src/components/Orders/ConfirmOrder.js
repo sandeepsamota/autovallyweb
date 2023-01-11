@@ -1,11 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
 import Navbar1 from "../Header/Navbar1";
 import Paytm from "../../assets/paytm.png";
 import Image1 from "../../assets/i20.jpg";
 import "../Products/ViewProduct.css";
 
 function ConfirmOrder() {
-  const coast = 3550;
+  const [quantity, setQuantity] = useState(1);
+  const countedfare = localStorage.getItem("dailyfare");
+  const fare = countedfare * quantity;
+  const tax = Math.floor((fare * 9) / 100);
+  const security = 5000;
+  const coast = fare + tax + security;
+  function incHandler() {
+    if (quantity < 3) {
+      setQuantity(quantity + 1);
+    }
+  }
+  function decHandler() {
+    if (quantity > 1) {
+      setQuantity(quantity - 1);
+    }
+  }
   return (
     <>
       <Navbar1 />
@@ -37,6 +52,7 @@ function ConfirmOrder() {
             <div>
               <div className="flex items-center mx-1 md:mx-10 lg:mx-24 md:my-1 space-x-1.5">
                 <button
+                  onClick={decHandler}
                   className="inline-flex items-center p-1 text-sm font-medium text-gray-500 bg-white border border-gray-300 rounded-full focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700"
                   type="button"
                 >
@@ -56,15 +72,18 @@ function ConfirmOrder() {
                   </svg>
                 </button>
                 <div>
-                  <input
+                  <div
                     type="number"
                     id="first_product"
-                    className="quantityinput bg-gray-50 w-12 text-center border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block px-2.5 py-1 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    className="quantityinput flex- justify-center h-8 bg-gray-50 w-12 text-center border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block px-2.5 py-1 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                     placeholder="1"
                     required
-                  />
+                  >
+                    {quantity}
+                  </div>
                 </div>
                 <button
+                  onClick={incHandler}
                   className="inline-flex items-center p-1 text-sm font-medium text-gray-500 bg-white border border-gray-300 rounded-full focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700"
                   type="button"
                 >
@@ -87,17 +106,23 @@ function ConfirmOrder() {
               <div className="rounded-md md:px-3 shadow-sm flex flex-col space-y-0.5 md:space-y-1 lg:space-y-2">
                 <div className="px-1 flex flex-row justify-between items-baseline">
                   <p className="text-sm text-[#808080] font-semibold">Fare:</p>
-                  <p className="text-sm text-[#808080] font-semibold">₹ 2423</p>
+                  <p className="text-sm text-[#808080] font-semibold">
+                    ₹ {fare}
+                  </p>
                 </div>
                 <div className="px-1 flex flex-row justify-between items-baseline">
                   <p className="text-sm text-[#808080] font-semibold">Tax:</p>
-                  <p className="text-sm text-[#808080] font-semibold">₹ 242</p>
+                  <p className="text-sm text-[#808080] font-semibold">
+                    ₹ {tax}
+                  </p>
                 </div>
                 <div className="px-1 flex flex-row justify-between items-baseline">
                   <p className="text-sm text-[#808080] font-semibold">
                     Security:
                   </p>
-                  <p className="text-sm text-[#808080] font-semibold">₹ 200</p>
+                  <p className="text-sm text-[#808080] font-semibold">
+                    ₹ {security}
+                  </p>
                 </div>
                 <hr className="md:block w-full border-1.5 border-[#e3d9f3]" />
 
@@ -110,9 +135,48 @@ function ConfirmOrder() {
               </div>
             </div>
           </div>
-          <div className="bg-gray-100 rounded-sm p-5 m-2 shadow-sm space-y-6">
-            <p className="text-sm font-semibold">Pick on:</p>
-            <p className="text-sm font-semibold">Drop on:</p>
+          <div className="p-3 bg-gray-100 shadow-sm rounded-sm m-2 relative flex align-center space-x-2 items-center">
+            <span className="text-sm font-semibold">Duration:</span>
+            <span className="text-sm font-semibold text-[#808080]">{`${localStorage.getItem(
+              "day"
+            )}day, ${localStorage.getItem("hour")}hour, ${localStorage.getItem(
+              "min"
+            )}min`}</span>
+          </div>
+          <div className="p-3 bg-gray-100 shadow-sm rounded-sm m-2 relative flex align-center space-x-2 items-center">
+            <div className="flex relative top-2 justify-between flex-col space-y-12">
+              <div className="bg-red-500 relative -top-8 md:-top-5 h-5 w-5 rounded-full"></div>
+              <div className="bg-green-500 relative -top-6 md:-top-8 h-5 w-5 rounded-full"></div>
+            </div>
+            <div className="flex absolute top-8 md:top-6 left-3 flex-col space-y-4">
+              <hr className="border-2 border-black h-[58px] md:h-9"></hr>
+            </div>
+            <div className="md:relative md:-top-2.5 space-y-4">
+              <div className="flex space-x-4">
+                <p className="text-sm">
+                  <span className="font-semibold">Pick Up : </span>
+                  <span className="font-semibold text-[#808080]">
+                    {localStorage.getItem("City")}
+                  </span>
+                  <br />
+                  <span className="font-semibold text-[#808080]">
+                    {localStorage.getItem("selectedstart")}
+                  </span>
+                </p>
+              </div>
+              <div className="flex space-x-4">
+                <p className="text-sm">
+                  <span className="font-semibold">Drop On : </span>
+                  <span className="font-semibold text-[#808080]">
+                    {localStorage.getItem("City")}
+                  </span>
+                  <br />
+                  <span className="font-semibold text-[#808080]">
+                    {localStorage.getItem("selectedend")}
+                  </span>
+                </p>
+              </div>
+            </div>
           </div>
         </div>
         <div>

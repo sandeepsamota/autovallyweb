@@ -71,7 +71,7 @@ function Preference() {
     <>
       <div className="w-full justify-center item-center flex">
         <div className="px-0 flex items-center flex-col md:flex-row space-y-4 lg:space-y-0 md:space-x-3 space-x-0">
-          <div className="relative md:top-2 lg:top-0">
+          <div className="relative md:top-4 lg:top-2">
             <Listbox value={selectCity} onChange={setSelectCity}>
               {({ open }) => (
                 <>
@@ -211,7 +211,7 @@ function Preference() {
               />
             </div>
           </div>
-          <div className="footer">
+          <div className="footer relative md:top-2">
             <button
               className="bg-[#6E3CBC] hover:bg-[#696969] rounded-full px-16 md:px-14 lg:px-15 py-3.5 relative top-2.5 text-white font-semibold"
               onClick={onFormSubmit}
